@@ -13,8 +13,9 @@ body {
 .consept-wrapper,
 .lookbook,
 .contact{
-    width: 800px;
+    width: 100%;
     margin: 0 auto;
+    border:white 1px solid;
 }
 
 a{
