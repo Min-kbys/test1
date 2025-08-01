@@ -1,0 +1,243 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./jewelry.css"/>
+    <title>LUNA|Jewelry</title>
+    <link rel="icon" href="./jewelry-images/logo-l.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Allura&family=Noto+Serif+JP:wght@200..900&family=Prata&display=swap"
+        rel="stylesheet">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="top-movie">
+        <video autoplay muted loop playsinline>
+            <source src="./jewelry-images/main.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="none-A"></div>
+
+    <div class="top" id="top">
+        <div class="top-contents">
+            <p class="p1">Shape your elegance </p>
+            <p class="p2">静かに、芯のある美しさを。</p>
+        </div>
+
+    </div>
+
+    <div class="none-B"></div>
+
+    <div class="menu" id="menu">
+        <div class="menu-animation" id="menu-animation">
+            <ul>
+                <li><a href="#top">TOP</a></li>
+                <li><a href="#consept">CONSEPT</a></li>
+                <li><a href="#lookbook">LOOK BOOK</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="consept" id="consept">
+        <div class="menu-icon" id="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="consept-wrapper">
+
+            <div class="title">
+                <p>CONSEPT</p>
+            </div>
+
+            <div class="brand-story-wrapper">
+                <div class="brand-story">
+                    <p class="consept-title">Brand Story</p>
+                    <div class="BS-content">
+                        <div class="left">
+                            <p>Luna（ルナ）は、月のように静かに輝き、凛とした美しさをまとうアクセサリーブランド。
+                            </p>
+                            <p>手に取った瞬間から感じる、繊細な手しごとの温もり。</p>
+                            <p>ひとつひとつ丁寧に磨き上げられたアイテムは、まるであなたの内側の輝きを映すかのように寄り添います。</p>
+                        </div>
+                        <img class=right src="./jewelry-images/logo-black.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class="Material-wrapper">
+                <div class="Material">
+                    <p class="consept-title">Material</p>
+                    <div class="M-content">
+                        <img class=left src="./jewelry-images/consept.jpg">
+                        <div class="right">
+                            <p>選び抜いた金属や天然石を、職人の手で何度も研磨し、質感と輝きを極めました。</p>
+                            <p>肌に触れる心地よさ、光を受けたときの美しい反射、すべてが「上質」を語ります。</p>
+                            <p>使い込むほどに味わいが増し、あなただけのストーリーが刻まれていきます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lookbook" id="lookbook">
+        <div class="title">
+            <p>LOOK BOOK</p>
+        </div>
+
+        <div class="lookbook-wrapper">
+            <div class="imgs-A">
+                <img class="img-left" src="./jewelry-images/lookbook1.jpg">
+                <img class="img-right" src="./jewelry-images/lookbook2.jpg">
+            </div>
+
+            <div class="imgs-B">
+                <img class="img-left" src="./jewelry-images/lookbook5.jpg">
+                <img class="img-right" src="./jewelry-images/lookbook4.jpg">
+            </div>
+
+            <div class="imgs-C">
+                <img class="img-left" src="./jewelry-images/lookbook3.jpg">
+                <img class="img-right" src="./jewelry-images/lookbook6.jpg">
+            </div>
+        </div>
+    </div>
+
+    <div class="contact" id="contact">
+        <div class="none-B"></div>
+
+        <div class="title">
+            <p>CONTACT</p>
+        </div>
+
+        <div class="link-btns">
+            <a href="#">購入はこちら</a>
+            <a href="#">お問い合わせ</a>
+        </div>
+
+        <div class="SNS">
+            <div class="SNS-content left">
+                <img src="./jewelry-images/SNS-X.png">
+                <p>@Luna_luxuaryjewelry</p>
+            </div>
+            <div class="SNS-content right">
+                <p>@Luna_luxuaryjewelry</p>
+                <img src="./jewelry-images/SNS-instagram.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-contents">
+            <div class="f-contents-top">
+                <p>〒152-0035 東京都港区〇－〇－〇</p>
+                <p>Tel: 03-1111-1111</p>
+                <p>E-mail: info@xxxxxxx.jp</p>
+            </div>
+            <div class="f-contents-bottom">
+                <p>© LUNA</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const topp = document.querySelectorAll(".p1,.p2");
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.7
+    });
+
+    topp.forEach(elem => observer.observe(elem));
+</script>
+
+<script>
+    window.addEventListener('scroll', () => {
+        const icon = document.querySelector('.menu-icon');
+        if (window.scrollY > 1700) {
+            icon.classList.add('fixed');
+        } else {
+            icon.classList.remove('fixed');
+        }
+    });
+</script>
+
+<script>
+    const consept = document.querySelectorAll(".brand-story-wrapper,.Material-wrapper");
+    const observe = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                observe.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    consept.forEach(elem => observe.observe(elem));
+</script>
+
+<script>
+    const lookbook = document.querySelectorAll(".img-right,.img-left");
+    const move = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                move.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.45
+    });
+
+    lookbook.forEach(elem => move.observe(elem));
+</script>
+
+<script>
+    const menu = document.getElementById("menu");
+    const openbtn = document.getElementById("menu-icon");
+    const menulink = document.querySelectorAll(".menu a")
+
+    openbtn.addEventListener("click", function () {
+        menu.classList.toggle("active");
+        openbtn.classList.toggle("active");
+    });
+
+    menulink.forEach(link => {
+        link.addEventListener("click", function () {
+            menu.classList.remove("active");
+            openbtn.classList.remove("active");
+        });
+    });
+</script>
+
+<script>
+    const contact = document.querySelectorAll(".contact a,.SNS-content.right,.SNS-content.left");
+    const observe1 = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                observe1.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    contact.forEach(elem => observe1.observe(elem));
+</script>
+
+</html>
